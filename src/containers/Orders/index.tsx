@@ -9,7 +9,7 @@ import Modal from "../../components/Modal";
 import OrderDetails from "./OrderDetails";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getOrdersRequest,
+  getOrders,
   selectError,
   selectLoading,
   selectOrders,
@@ -27,7 +27,7 @@ const Orders: React.FC<OrdersProps> = () => {
     id: 1,
     user_id: 1,
     created_at: "eee",
-    status: "shipped",
+    status: 1,
     products: [
       {
         id: 1,
@@ -48,7 +48,7 @@ const Orders: React.FC<OrdersProps> = () => {
   };
 
   useEffect(() => {
-    // dispatch(getOrdersRequest({}));
+    dispatch(getOrders());
   }, []);
 
   if (error) return <StyledError>{error}</StyledError>;
@@ -66,7 +66,8 @@ const Orders: React.FC<OrdersProps> = () => {
             <SingleOrder
               order={order}
               name={order.products[0].name}
-              quantity={order.products[0].stock}
+              quantity={order.products[0].quantity}
+              price={order.products[0].price}
               onClick={handleClick}
             />
           ))}

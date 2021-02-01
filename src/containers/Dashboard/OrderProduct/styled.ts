@@ -26,6 +26,6 @@ export const ButtonContainer = styled.div`
   justify-content: center;
   margin-top: 2rem;
   button {
-    width: 30rem;
+    width: 40rem;
   }
 `;

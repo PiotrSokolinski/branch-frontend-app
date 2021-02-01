@@ -12,7 +12,7 @@ import {
   selectProducts,
   selectError,
   selectLoading,
-  getProductsRequest,
+  getProducts,
 } from "../../redux/products";
 import { StyledError } from "../RegisterForm/styled";
 
@@ -37,7 +37,7 @@ const Dashboard: React.FC = () => {
   };
 
   useEffect(() => {
-    // dispatch(getProductsRequest({}));
+    dispatch(getProducts());
   }, []);
 
   if (error) return <StyledError>{error}</StyledError>;
@@ -47,7 +47,7 @@ const Dashboard: React.FC = () => {
   return (
     <>
       <Modal visible={isOpened} onClose={closeModal}>
-        <OrderProduct product={product} />
+        <OrderProduct product={product} closeModal={closeModal} />
       </Modal>
       <Container>
         <PageTitle>Products</PageTitle>

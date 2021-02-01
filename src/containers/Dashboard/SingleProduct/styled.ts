@@ -9,7 +9,7 @@ export const Container = styled.div`
   margin-top: 3rem;
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 0px 3rem ${({ theme }) => theme.colors.solitude};
-
+  min-width: 40rem;
   max-width: 80rem;
 `;
 

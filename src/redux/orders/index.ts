@@ -4,8 +4,14 @@ export {
   getOrdersFailure,
 } from "./actions";
 
-export { selectLoading, selectOrders, selectError } from "./selectors";
+export {
+  selectLoading,
+  selectOrders,
+  selectError,
+  selectOrderLoading,
+  selectOrderError,
+} from "./selectors";
 
-export { getOrders } from "./services";
+export { getOrders, makeOrder } from "./services";
 
 export { ordersReducer } from "./reducer";

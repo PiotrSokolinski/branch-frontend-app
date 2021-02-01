@@ -16,3 +16,13 @@ export const selectOrders: any = createSelector(
   selectState,
   (substate: any): object => substate.orders
 );
+
+export const selectOrderLoading: any = createSelector(
+  selectState,
+  (substate: any): object => substate.orderLoading
+);
+
+export const selectOrderError: any = createSelector(
+  selectState,
+  (substate: any): object => substate.orderError
+);

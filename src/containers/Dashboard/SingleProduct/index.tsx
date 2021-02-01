@@ -35,7 +35,7 @@ const SingleProduct: React.FC<SingleProductProps> = ({
       <BottomContainer>
         <Wrapper>
           <Text>Price:</Text>
-          <Price>{product.price}</Price>
+          <Price>{`${product.price / 100}$`}</Price>
         </Wrapper>
         {withoutStock ? (
           <div />

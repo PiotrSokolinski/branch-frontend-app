@@ -17,6 +17,7 @@ export const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
   align-self: center;
   margin-top: 3rem;
+  min-width: 40rem;
 `;
 
 export const Content = styled.div`

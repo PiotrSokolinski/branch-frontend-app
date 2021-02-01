@@ -4,14 +4,15 @@ import {
   getProductsSuccess,
 } from "./actions";
 
-export const getProducts = (email: string, password: string): any => {
+export const getProducts = (): any => {
   return async (dispatch: any, _: any, { axios, history }: any) => {
     dispatch(getProductsRequest({}));
 
-    const url = "/api/token";
+    const url = "/api/v1/products";
     try {
       const result = await axios.get(url);
-      dispatch(getProductsSuccess({ products: result }));
+
+      dispatch(getProductsSuccess({ products: result.data }));
     } catch (error) {
       dispatch(getProductsFailure({ error: error.message }));
     }

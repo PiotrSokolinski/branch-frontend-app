@@ -5,16 +5,18 @@ import { Order } from "../../../types/Order";
 
 type SingleOrderProps = {
   name: string;
-  quantity: number;
+  quantity?: number;
   order: Order;
   onClick: (order: Order) => void;
+  price: number;
 };
 
 const SingleOrder: React.FC<SingleOrderProps> = ({
   onClick,
   name,
-  quantity,
+  quantity = 1,
   order,
+  price,
 }) => {
   const handleClick = () => onClick(order);
   return (
@@ -27,6 +29,10 @@ const SingleOrder: React.FC<SingleOrderProps> = ({
       <Wrapper>
         <Text>Quantity:</Text>
         <Quantity>{quantity}</Quantity>
+      </Wrapper>
+      <Wrapper>
+        <Text>Total amount:</Text>
+        <Quantity>{`${(quantity * price) / 100}$`}</Quantity>
       </Wrapper>
     </Container>
   );

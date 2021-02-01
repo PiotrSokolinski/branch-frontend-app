@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import publicRoutes, { PublicRouteType } from "./publicRoutes";
 import privateRoutes, { PrivateRouteType } from "./privateRoutes";
@@ -34,6 +34,9 @@ const App: React.FC<AppProps> = () => {
           />
         )
       )}
+      <Route exact path="/">
+        <Redirect to="/products" />
+      </Route>
       <Route component={NotFound} />
     </Switch>
   );

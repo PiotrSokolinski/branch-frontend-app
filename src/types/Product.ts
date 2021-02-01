@@ -4,6 +4,7 @@ type Product = {
   description: string;
   price: number;
   stock: number;
+  quantity?: number;
 };
 
 export type { Product };

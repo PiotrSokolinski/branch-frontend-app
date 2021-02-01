@@ -23,7 +23,7 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({
       path={path}
       render={() => {
         const currentUser = localStorageService.getSession();
-        if (false) return <Redirect to="/login" />;
+        if (!currentUser) return <Redirect to="/login" />;
         return (
           <Layout>
             <Component />

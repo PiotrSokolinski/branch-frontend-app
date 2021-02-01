@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginForm /> Should render primary button and match the snapshot 1`] = `
+<div>
+  <div
+    class="sc-jSgupP hiHddL"
+  >
+    <form
+      class="sc-gKsewC eVVmvP"
+    >
+      <h1
+        class="sc-jrAGrp uXCsa"
+      >
+        Sign in
+      </h1>
+      <div
+        class="sc-iBPRYJ fIgKZv"
+      >
+        <div
+          class="sc-crrsfI jntZes"
+        >
+          <label
+            class="sc-iqHYGH hUVMec"
+            for="email"
+          >
+            E-mail
+          </label>
+          <input
+            class="sc-kEjbxe iRwQfK"
+            id="email"
+            name="email"
+            placeholder="Address e-mail"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        class="sc-iBPRYJ fIgKZv"
+      >
+        <div
+          class="sc-crrsfI jntZes"
+        >
+          <label
+            class="sc-iqHYGH hUVMec"
+            for="password"
+          >
+            Password
+          </label>
+          <input
+            class="sc-kEjbxe iRwQfK"
+            id="password"
+            name="password"
+            placeholder="Password"
+            type="password"
+            value=""
+          />
+        </div>
+      </div>
+      <button
+        class="sc-dlfnbm gfORQY sc-pFZIQ dqXbvk"
+        type="submit"
+      >
+        Sign in
+      </button>
+      <a
+        class="sc-bdfBwQ uLwuk sc-fubCfw komXDx"
+        href="/register"
+      >
+        Don’t have an account yet?
+      </a>
+    </form>
+  </div>
+</div>
+`;

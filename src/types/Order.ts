@@ -4,7 +4,7 @@ type Order = {
   id: number;
   user_id: number;
   created_at: string;
-  status: string;
+  status: number;
   // | "awaiting_confirmation"
   // | "cancelled"
   // | "awaiting_shipment"

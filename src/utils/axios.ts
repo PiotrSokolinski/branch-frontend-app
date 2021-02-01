@@ -6,10 +6,16 @@ import localStorageService from "./localStorage";
 
 axios.interceptors.request.use(
   (config) => {
-    config.baseURL = "https://lumiere-bcknd.herokuapp.com";
+    config.baseURL = "https://iap-branch-backend.herokuapp.com";
 
-    const headers: object = localStorageService.getHeaders();
-    config.headers = { ...headers, ...config.headers };
+    const headers: any = localStorageService.getHeaders();
+    console.log({ headers });
+    config.headers = {
+      "Content-Type": "application/json;charset=utf-8",
+      Authorization: `Bearer ${headers.access_token}`,
+      // ...headers,
+      // ...config.headers,
+    };
 
     return config;
   },
@@ -18,11 +24,12 @@ axios.interceptors.request.use(
 
 axios.interceptors.response.use(
   (response) => {
-    localStorageService.updateSession("headers", {
-      "Content-Type": "application/json;charset=utf-8",
-      "token-type": "Bearer",
-      "access-token": response.headers.access_token,
-    });
+    console.log({ response });
+    // localStorageService.updateSession("headers", {
+    //   "Content-Type": "application/json;charset=utf-8",
+    //   "token-type": "Bearer",
+    //   access_token: response.headers.access_token,
+    // });
 
     return response;
   },
